@@ -178,7 +178,7 @@ def train_and_evaluate():
         writer.add_scalar('step_time', step_time, iteration)
         writer.add_scalar('loss', loss.item(), iteration)
         writer.add_scalar('difference_with_true_loss', difference.item(), iteration)
-        print('iteration {iteration}, time {step_time} ms, {loss.item():.3f}')
+        print(f'iteration {iteration}, time {step_time} ms, {loss.item():.3f}')
 
         if iteration % EVAL_STEP == 0:
             loss = evaluate(model, criterion, val_datasets)
